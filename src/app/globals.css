@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0A0A0A;
+  --color-accent: #FF623B;
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", monospace;
+  --font-lora: "Lora", serif;
+  --font-azeret: "Azeret Mono", monospace;
+}
+
+/* ── Base ────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar hide ──────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Noise overlay ───────────────────────────────── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/noise.png');
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  opacity: 0.08;
+  z-index: 9999;
+}
+
+/* ── Bottom gradient blur ────────────────────────── */
+.bottom-blur {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  z-index: 40;
+  pointer-events: none;
+}
+
+/* ── Button slide animation ──────────────────────── */
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.btn-slide .btn-text-default,
+.btn-slide .btn-text-hover {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: transform 0.15s ease-in-out;
+}
+
+.btn-slide .btn-text-hover {
+  transform: translateY(100%);
+}
+
+.btn-slide:hover .btn-text-default {
+  transform: translateY(-100%);
+}
+
+.btn-slide:hover .btn-text-hover {
+  transform: translateY(0);
+}
+
+/* ── Glass card ──────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+/* ── Floating pill navbar ────────────────────────── */
+.pill-nav {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  z-index: 100;
+  border-radius: 9999px;
+  padding: 8px 8px 8px 24px;
+  white-space: nowrap;
+  background: rgba(17, 17, 17, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s;
+}
+
+.pill-nav.hidden-pill {
+  transform: translateX(-50%) translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pill-nav.visible-pill {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Tag pill ────────────────────────────────────── */
+.tag-pill {
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  padding: 4px 12px;
+  border-radius: 999px;
+  opacity: 0.65;
+  color: white;
+}
+
+/* ── Domain card backgrounds ─────────────────────── */
+.domain-bg-1 { background: linear-gradient(135deg, #0A0A0A 0%, #1a1a2e 100%); }
+.domain-bg-2 { background: linear-gradient(135deg, #0A0A0A 0%, #1a2e1a 100%); }
+.domain-bg-3 { background: linear-gradient(135deg, #0A0A0A 0%, #2e1a1a 100%); }
+.domain-bg-4 { background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 100%); }
+
+/* ── Tech grid glow ──────────────────────────────── */
+.tech-cell {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tech-cell .glow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 128px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  opacity: 0;
+  filter: blur(24px);
+  transition: opacity 0.3s;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(173,216,255,0.18) 0%, rgba(255,255,255,0.08) 38%, rgba(255,255,255,0) 72%);
+}
+
+.tech-cell:hover .glow {
+  opacity: 1;
+}
+
+/* ── Ethos desktop columns ───────────────────────── */
+.ethos-col {
+  flex: 1 1 0%;
+  transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  cursor: default;
+}
+
+.ethos-col:hover {
+  flex: 2.2 1 0%;
+}
+
+/* ── Mobile card stack ───────────────────────────── */
+.card-stack-item {
+  position: absolute;
+  inset: 0;
+  text-align: left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
