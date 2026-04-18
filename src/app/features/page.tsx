@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const style = `
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.8; }
 }
 
 @keyframes float {
@@ -18,46 +18,29 @@ const style = `
 }
 
 @keyframes slideInLeft {
-  from { transform: translateX(-100px); opacity: 0; }
+  from { transform: translateX(-50px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(100px); opacity: 0; }
+  from { transform: translateX(50px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from { transform: translateY(50px); opacity: 0; }
+  from { transform: translateY(30px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-.animate-section {
-  position: relative;
-}
-
 .feature-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.feature-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(255, 98, 59, 0.2);
-}
-
-.feature-icon {
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
-.feature-card:hover .feature-icon {
-  transform: rotate(360deg) scale(1.1);
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #FF623B 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 98, 59, 0.2);
 }
 `;
 
@@ -99,7 +82,7 @@ export default function Features() {
           {/* Hero Section */}
           <section className="animate-section" id="hero" style={{ 
             position: "relative", 
-            height: "60vh", 
+            height: "70vh", 
             overflow: "hidden", 
             background: "rgb(10, 10, 10)", 
             display: "flex", 
@@ -176,27 +159,28 @@ export default function Features() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'
               }}>
-                Everything You Need<br />In One Platform
+                Everything You Need to Scale Your Business
               </h1>
               <p style={{ 
                 fontSize: "clamp(1.1rem, 2vw, 1.3rem)", 
-                color: "rgba(231, 231, 231, 0.9)", 
+                color: "rgba(231, 231, 231, 0.8)", 
                 lineHeight: "1.6", 
-                maxWidth: "600px", 
-                margin: "0 0 32px 0",
+                margin: "0 0 32px 0", 
+                maxWidth: "600px",
                 transform: visibleSections.has('hero') ? 'translateY(0)' : 'translateY(30px)',
                 opacity: visibleSections.has('hero') ? 1 : 0,
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s'
               }}>
-                Software, services, and AI - combined into a single growth engine for your service business.
+                Complete SaaS platform with done-for-you services. One solution for all your growth needs.
               </p>
               <button 
-                className="group relative overflow-hidden flex items-center justify-center h-[44px] bg-[#FF623B] hover:bg-white transition-all duration-300 cursor-pointer border border-[#FF623B] hover:border-black/10 px-8 rounded-full shadow-lg hover:shadow-xl hover:shadow-[#FF623B]/30 transform hover:scale-105" 
+                className="group relative overflow-hidden flex items-center justify-center h-[44px] bg-[#FF623B] hover:bg-white transition-all duration-300 cursor-pointer border border-[#FF623B] hover:border-white rounded-full px-8 transform hover:scale-105" 
                 style={{ 
-                  width: "fit-content",
+                  width: "fit-content", 
                   transform: visibleSections.has('hero') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
                   opacity: visibleSections.has('hero') ? 1 : 0,
-                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.8s'
+                  transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+                  boxShadow: '0 10px 30px rgba(255, 98, 59, 0.3)'
                 }}
               >
                 <span className="invisible text-[11px] font-semibold uppercase tracking-wider">Book a Call</span>
@@ -207,56 +191,248 @@ export default function Features() {
           </section>
 
           {/* Two Worlds Section */}
-          <section className="animate-section" id="two-worlds" style={{ 
-            padding: "80px clamp(20px, 5vw, 40px)", 
+          <div id="two-worlds">
+            <section className="relative bg-[#0A0A0A]" style={{ zIndex: 30, isolation: "isolate" }}>
+              {/* Section header */}
+              <div
+                className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+                style={{ zIndex: 60 }}
+              >
+                <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                  <div className="flex flex-col gap-3">
+                    <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                      PLATFORM
+                    </span>
+                    <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                      Two Worlds, One Platform
+                    </h2>
+                    <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                      Lead Generation, SEO & Content Tools in One
+                    </p>
+                  </div>
+                  <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                    <span className="btn-text-default text-black">start a project</span>
+                    <span className="btn-text-hover text-white">start a project</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Sticky cards */}
+              {[
+                {
+                  tag: "S",
+                  title: "The Software",
+                  description: "A complete SaaS operating system. Everything you need to run your business.",
+                  features: [
+                    "CRM & Pipelines", "Sales Funnels", "Calendar Booking", "Automations & Workflows",
+                    "Email & SMS", "Website Builder", "Client Portal", "Courses & Communities",
+                    "AI Assistant", "Prospecting Engine", "Analytics", "Affiliate Software"
+                  ],
+                  ctaLabel: "Explore Software",
+                  color: "#FF623B"
+                },
+                {
+                  tag: "G", 
+                  title: "Growth Services",
+                  description: "Done-for-you creative services. Expert execution, zero effort from you.",
+                  features: [
+                    "Reels", "Carousels", "Blogs", "SEO", "Content Calendar", "Strategy Calls",
+                    "Prospecting", "AI-Powered Research", "Publishing & Scheduling", "Full Setup & Branding",
+                    "Zero Commission", "AI Outreach"
+                  ],
+                  ctaLabel: "Get Services",
+                  color: "#4E8B8B"
+                }
+              ].map((world, idx) => (
+                <div
+                  key={idx}
+                  className="sticky top-0 flex w-full items-center justify-center px-4 sm:px-6 lg:px-10"
+                  style={{ zIndex: 30 + idx, height: "100svh" }}
+                >
+                  <div
+                    className="relative flex flex-col md:flex-row w-full max-w-[1200px] overflow-hidden"
+                    style={{
+                      height: "clamp(480px, 92svh, 680px)",
+                      borderRadius: 20,
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      background: "#0A0A0A",
+                    }}
+                  >
+                    {/* Background gradient */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `radial-gradient(ellipse at ${idx % 2 === 0 ? "30%" : "70%"} 50%, ${world.color}15 0%, transparent 60%)`,
+                      }}
+                    />
+
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-1 flex-col p-6 md:p-8 xl:p-10">
+                      <div className="flex items-center justify-between">
+                        <span className="text-white font-medium uppercase" style={{ fontSize: 11, letterSpacing: "0.08em", opacity: 0.35 }}>
+                          ({world.tag})
+                        </span>
+                        <span className="text-white font-normal" style={{ fontSize: 13, letterSpacing: "0.02em", opacity: 0.25 }}>
+                          {String(idx + 1).padStart(2, "0")} / 02
+                        </span>
+                      </div>
+
+                      <div className="mt-8 mb-auto flex flex-col gap-6 md:mt-10 xl:mt-12">
+                        <div className="flex flex-col gap-4">
+                          <h3
+                            className="text-white font-normal"
+                            style={{
+                              fontSize: "clamp(1.8rem, 1.2rem + 3vw, 4.2rem)",
+                              lineHeight: "1.08em",
+                              letterSpacing: "-0.04em",
+                              whiteSpace: "pre-line",
+                            }}
+                          >
+                            {world.title}
+                          </h3>
+
+                          <p
+                            className="text-white font-normal"
+                            style={{ fontSize: 15, lineHeight: "1.65em", letterSpacing: "-0.01em", opacity: 0.35, maxWidth: 420 }}
+                          >
+                            {world.description}
+                          </p>
+                        </div>
+
+                        {/* Feature Grid - Center Layout */}
+                        <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
+                          {world.features.map((feature, featureIdx) => (
+                            <div
+                              key={featureIdx}
+                              className="relative group"
+                              style={{
+                                transform: `rotate(${featureIdx % 2 === 0 ? -2 : 2}deg)`,
+                                transition: 'all 0.3s ease'
+                              }}
+                              onMouseEnter={(e) => {
+                                const target = e.currentTarget;
+                                target.style.transform = 'rotate(0deg) scale(1.05)';
+                                target.style.zIndex = '10';
+                              }}
+                              onMouseLeave={(e) => {
+                                const target = e.currentTarget;
+                                target.style.transform = `rotate(${featureIdx % 2 === 0 ? -2 : 2}deg) scale(1)`;
+                                target.style.zIndex = '1';
+                              }}
+                            >
+                              <div
+                                className="px-3 py-2 text-center border rounded-lg transition-all duration-300"
+                                style={{
+                                  background: `${world.color}10`,
+                                  borderColor: `${world.color}30`,
+                                  color: "#fff",
+                                  fontSize: "11px",
+                                  fontWeight: "500",
+                                  boxShadow: `0 4px 12px ${world.color}20`
+                                }}
+                              >
+                                {feature}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="mt-6 hidden md:block">
+                          <a
+                            href="#contact"
+                            className="group relative overflow-hidden inline-flex items-center justify-center font-medium"
+                            style={{ 
+                              fontSize: 13, 
+                              letterSpacing: "-0.01em", 
+                              height: 44, 
+                              padding: "0 24px", 
+                              borderRadius: 0, 
+                              background: world.color, 
+                              color: "#fff", 
+                              width: "fit-content" 
+                            }}
+                          >
+                            <div className="relative flex items-center justify-center w-full h-full">
+                              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-12">
+                                {world.ctaLabel}
+                              </span>
+                              <span className="absolute block transition-transform duration-300 ease-out translate-y-12 group-hover:translate-y-0">
+                                {world.ctaLabel}
+                              </span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Visual area */}
+                    <div className="relative z-10 shrink-0 flex items-end justify-center w-full h-[200px] md:h-full md:w-[clamp(240px,28vw,420px)]">
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div 
+                          className="text-6xl md:text-8xl font-bold opacity-20"
+                          style={{ 
+                            color: world.color,
+                            textShadow: `0 0 40px ${world.color}40`
+                          }}
+                        >
+                          {world.tag}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              <div style={{ height: 1 }} />
+            </section>
+          </div>
+
+          {/* Comparison Section */}
+          <section className="animate-section" id="comparison" style={{ 
+            padding: "80px 0", 
             background: "rgb(15, 15, 15)",
-            transform: visibleSections.has('two-worlds') ? 'translateY(0)' : 'translateY(50px)',
-            opacity: visibleSections.has('two-worlds') ? 1 : 0,
+            transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(50px)',
+            opacity: visibleSections.has('comparison') ? 1 : 0,
             transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-              <h2 style={{ 
-                fontSize: "clamp(2rem, 4vw, 3rem)", 
-                color: "rgb(231, 231, 231)", 
-                textAlign: "center", 
-                marginBottom: "16px",
-                background: 'linear-gradient(135deg, #ffffff 0%, #FF623B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                transform: visibleSections.has('two-worlds') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('two-worlds') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
-              }}>
-                Two Worlds, One Platform
-              </h2>
-              <p style={{ 
-                fontSize: "clamp(1.2rem, 2vw, 1.5rem)", 
-                color: "rgba(231, 231, 231, 0.9)", 
-                textAlign: "center", 
-                marginBottom: "60px",
-                transform: visibleSections.has('two-worlds') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('two-worlds') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-              }}>
-                Lead Generation, SEO & Content Tools in One
-              </p>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "40px" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    COMPARISON
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Why Choose GoToStudio?
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    The all-in-one solution vs. piecing together multiple tools
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">learn more</span>
+                  <span className="btn-text-hover text-white">learn more</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "40px" }}>
                 <div 
                   className="feature-card"
                   style={{ 
                     background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)", 
                     border: "1px solid rgba(255, 98, 59, 0.3)", 
                     borderRadius: "16px", 
-                    padding: "40px",
+                    padding: "32px",
                     position: "relative",
                     overflow: "hidden",
-                    transform: visibleSections.has('two-worlds') ? 'translateX(0) scale(1)' : 'translateX(-50px) scale(0.9)',
-                    opacity: visibleSections.has('two-worlds') ? 1 : 0,
-                    transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s'
-                  }}
-                >
+                    transform: visibleSections.has('comparison') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                    opacity: visibleSections.has('comparison') ? 1 : 0,
+                    transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s`
+                  }}>
                   <div style={{
                     position: 'absolute',
                     top: '-50%',
@@ -264,47 +440,34 @@ export default function Features() {
                     width: '200%',
                     height: '200%',
                     background: 'radial-gradient(circle, rgba(255, 98, 59, 0.1) 0%, transparent 70%)',
-                    animation: visibleSections.has('two-worlds') ? 'float 6s ease-in-out infinite' : 'none'
+                    animation: visibleSections.has('comparison') ? `float 6s ease-in-out infinite` : 'none'
                   }}></div>
-                  <div className="feature-icon" style={{ 
-                    width: "60px", 
-                    height: "60px", 
-                    background: "linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)", 
-                    borderRadius: "12px", 
-                    marginBottom: "20px",
-                    display: "flex", 
-                    alignItems: "center", 
-                    justifyContent: "center",
-                    boxShadow: '0 10px 30px rgba(255, 98, 59, 0.3)'
-                  }}>
-                    <span style={{ fontSize: "24px", color: "white" }}>S</span>
-                  </div>
-                  <h3 style={{ fontSize: "1.5rem", color: "rgb(231, 231, 231)", marginBottom: "16px" }}>The Software</h3>
-                  <p style={{ color: "rgba(231, 231, 231, 0.8)", marginBottom: "24px", lineHeight: "1.6" }}>
-                    A complete SaaS operating system. Everything you need to run your business.
-                  </p>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
+                  <h3 style={{ fontSize: "1.5rem", color: "rgb(231, 231, 231)", marginBottom: "16px" }}>Traditional Approach</h3>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                     {[
-                      "CRM & Pipelines", "Sales Funnels", "Calendar Booking", "Automations & Workflows",
-                      "Email & SMS", "Website Builder", "Client Portal", "Courses & Communities",
-                      "AI Assistant", "Prospecting Engine", "Analytics", "Affiliate Software"
-                    ].map((feature, index) => (
+                      "Multiple subscriptions",
+                      "Complex integrations", 
+                      "Data silos",
+                      "Higher costs",
+                      "Steep learning curve",
+                      "Inconsistent reporting"
+                    ].map((item, index) => (
                       <div key={index} style={{ 
                         display: "flex", 
                         alignItems: "center", 
-                        gap: "8px",
-                        transform: visibleSections.has('two-worlds') ? 'translateX(0)' : 'translateX(-20px)',
-                        opacity: visibleSections.has('two-worlds') ? 1 : 0,
+                        gap: "12px",
+                        transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(-20px)',
+                        opacity: visibleSections.has('comparison') ? 1 : 0,
                         transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.8 + index * 0.05}s`
                       }}>
                         <div style={{ 
-                          width: "6px", 
-                          height: "6px", 
+                          width: "8px", 
+                          height: "8px", 
                           borderRadius: "50%", 
-                          background: "#FF623B",
-                          boxShadow: '0 0 10px rgba(255, 98, 59, 0.5)'
+                          background: "rgba(255, 98, 59, 0.5)", 
+                          flexShrink: 0 
                         }}></div>
-                        <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.9)" }}>{feature}</span>
+                        <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.7)" }}>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -313,65 +476,51 @@ export default function Features() {
                 <div 
                   className="feature-card"
                   style={{ 
-                    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)", 
-                    border: "1px solid rgba(255, 255, 255, 0.1)", 
+                    background: "linear-gradient(135deg, rgba(78, 139, 139, 0.1) 0%, rgba(78, 139, 139, 0.05) 100%)", 
+                    border: "1px solid rgba(78, 139, 139, 0.3)", 
                     borderRadius: "16px", 
-                    padding: "40px",
+                    padding: "32px",
                     position: "relative",
                     overflow: "hidden",
-                    transform: visibleSections.has('two-worlds') ? 'translateX(0) scale(1)' : 'translateX(50px) scale(0.9)',
-                    opacity: visibleSections.has('two-worlds') ? 1 : 0,
-                    transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s'
-                  }}
-                >
+                    transform: visibleSections.has('comparison') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                    opacity: visibleSections.has('comparison') ? 1 : 0,
+                    transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s`
+                  }}>
                   <div style={{
                     position: 'absolute',
                     top: '-50%',
-                    left: '-50%',
+                    right: '-50%',
                     width: '200%',
                     height: '200%',
-                    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)',
-                    animation: visibleSections.has('two-worlds') ? 'float 6s ease-in-out infinite 3s' : 'none'
+                    background: 'radial-gradient(circle, rgba(78, 139, 139, 0.1) 0%, transparent 70%)',
+                    animation: visibleSections.has('comparison') ? `float 6s ease-in-out infinite 2s` : 'none'
                   }}></div>
-                  <div className="feature-icon" style={{ 
-                    width: "60px", 
-                    height: "60px", 
-                    background: "linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%)", 
-                    borderRadius: "12px", 
-                    marginBottom: "20px",
-                    display: "flex", 
-                    alignItems: "center", 
-                    justifyContent: "center",
-                    boxShadow: '0 10px 30px rgba(255, 255, 255, 0.2)'
-                  }}>
-                    <span style={{ fontSize: "24px", color: "#FF623B" }}>G</span>
-                  </div>
-                  <h3 style={{ fontSize: "1.5rem", color: "rgb(231, 231, 231)", marginBottom: "16px" }}>Growth Services</h3>
-                  <p style={{ color: "rgba(231, 231, 231, 0.8)", marginBottom: "24px", lineHeight: "1.6" }}>
-                    Done-for-you creative services. Expert execution, zero effort from you.
-                  </p>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
+                  <h3 style={{ fontSize: "1.5rem", color: "rgb(231, 231, 231)", marginBottom: "16px" }}>GoToStudio Solution</h3>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                     {[
-                      "Reels", "Carousels", "Blogs", "SEO", "Content Calendar", "Strategy Calls",
-                      "Prospecting", "AI-Powered Research", "Publishing & Scheduling", "Full Setup & Branding",
-                      "Zero Commission", "AI Outreach"
-                    ].map((service, index) => (
+                      "All-in-one platform",
+                      "Seamless integration", 
+                      "Unified data",
+                      "Cost-effective",
+                      "Easy to use",
+                      "Comprehensive analytics"
+                    ].map((item, index) => (
                       <div key={index} style={{ 
                         display: "flex", 
                         alignItems: "center", 
-                        gap: "8px",
-                        transform: visibleSections.has('two-worlds') ? 'translateX(0)' : 'translateX(20px)',
-                        opacity: visibleSections.has('two-worlds') ? 1 : 0,
+                        gap: "12px",
+                        transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(20px)',
+                        opacity: visibleSections.has('comparison') ? 1 : 0,
                         transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.8 + index * 0.05}s`
                       }}>
                         <div style={{ 
-                          width: "6px", 
-                          height: "6px", 
+                          width: "8px", 
+                          height: "8px", 
                           borderRadius: "50%", 
-                          background: "#ffffff",
-                          boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
+                          background: "#4E8B8B", 
+                          flexShrink: 0 
                         }}></div>
-                        <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.9)" }}>{service}</span>
+                        <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.7)" }}>{item}</span>
                       </div>
                     ))}
                   </div>
@@ -380,412 +529,229 @@ export default function Features() {
             </div>
           </section>
 
-          {/* Comparison Section */}
-          <section className="animate-section" id="comparison" style={{ 
-            padding: "80px clamp(20px, 5vw, 40px)", 
+          {/* Freelancer Team Section */}
+          <section className="animate-section" id="freelancer-team" style={{ 
+            padding: "80px 0", 
             background: "rgb(10, 10, 10)",
-            transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(50px)',
-            opacity: visibleSections.has('comparison') ? 1 : 0,
+            transform: visibleSections.has('freelancer-team') ? 'translateY(0)' : 'translateY(50px)',
+            opacity: visibleSections.has('freelancer-team') ? 1 : 0,
             transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
           }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-              <h2 style={{ 
-                fontSize: "clamp(2rem, 4vw, 3rem)", 
-                color: "rgb(231, 231, 231)", 
-                textAlign: "center", 
-                marginBottom: "60px",
-                background: 'linear-gradient(135deg, #ffffff 0%, #FF623B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('comparison') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
-              }}>
-                The Old Way vs. The New Way
-              </h2>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "40px", alignItems: "center" }}>
-                <div style={{
-                  transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(-50px)',
-                  opacity: visibleSections.has('comparison') ? 1 : 0,
-                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-                }}>
-                  <h3 style={{ fontSize: "1.2rem", color: "rgba(231, 231, 231, 0.6)", marginBottom: "24px" }}>Your Current Stack</h3>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px", marginBottom: "24px" }}>
-                    {["HubSpot", "ClickFunnels", "Kajabi", "Mailchimp", "Calendly", "Zapier", "Typeform", "DocuSign", "Skool", "Circle", "Teachable", "Asana", "Buffer", "Notion", "Canva"].map((tool, index) => (
-                      <div key={index} style={{ 
-                        background: "rgba(255, 255, 255, 0.05)", 
-                        padding: "8px 12px", 
-                        borderRadius: "6px", 
-                        fontSize: "14px", 
-                        color: "rgba(231, 231, 231, 0.7)",
-                        transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(20px)',
-                        opacity: visibleSections.has('comparison') ? 1 : 0,
-                        transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.03}s`,
-                        border: '1px solid rgba(255, 255, 255, 0.1)'
-                      }}>
-                        {tool}
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{ 
-                    fontSize: "2rem", 
-                    color: "#FF623B", 
-                    fontWeight: "bold",
-                    textShadow: '0 0 20px rgba(255, 98, 59, 0.5)',
-                    animation: visibleSections.has('comparison') ? 'pulse 2s infinite' : 'none'
-                  }}>$2,500+</div>
-                  <div style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.6)" }}>Monthly Cost</div>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    TARGET AUDIENCE
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Perfect for Freelancers & Agencies
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Scale your client work without the overhead
+                  </p>
                 </div>
-                
-                <div style={{ 
-                  fontSize: "2rem", 
-                  color: "#FF623B", 
-                  fontWeight: "bold",
-                  transform: visibleSections.has('comparison') ? 'scale(1) rotate(0deg)' : 'scale(0.5) rotate(180deg)',
-                  opacity: visibleSections.has('comparison') ? 1 : 0,
-                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s',
-                  textShadow: '0 0 30px rgba(255, 98, 59, 0.8)'
-                }}>VS</div>
-                
-                <div style={{
-                  transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(50px)',
-                  opacity: visibleSections.has('comparison') ? 1 : 0,
-                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-                }}>
-                  <h3 style={{ fontSize: "1.2rem", color: "rgba(231, 231, 231, 0.6)", marginBottom: "24px" }}>GoToStudio</h3>
-                  <div style={{ 
-                    background: "linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)", 
-                    padding: "24px", 
-                    borderRadius: "12px", 
-                    marginBottom: "24px",
-                    transform: visibleSections.has('comparison') ? 'scale(1)' : 'scale(0.9)',
-                    opacity: visibleSections.has('comparison') ? 1 : 0,
-                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
-                    boxShadow: '0 20px 40px rgba(255, 98, 59, 0.3)'
-                  }}>
-                    <div style={{ 
-                      fontSize: "2rem", 
-                      color: "white", 
-                      fontWeight: "bold", 
-                      marginBottom: "8px",
-                      textShadow: '0 0 20px rgba(255, 255, 255, 0.5)'
-                    }}>$147</div>
-                    <div style={{ fontSize: "14px", color: "rgba(255, 255, 255, 0.9)" }}>Starting Price</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div style={{ 
-                marginTop: "60px", 
-                padding: "40px", 
-                background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)", 
-                border: "1px solid rgba(255, 98, 59, 0.3)", 
-                borderRadius: "16px",
-                transform: visibleSections.has('comparison') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                opacity: visibleSections.has('comparison') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s',
-                boxShadow: '0 20px 40px rgba(255, 98, 59, 0.1)'
-              }}>
-                <h3 style={{ 
-                  fontSize: "1.5rem", 
-                  color: "rgb(231, 231, 231)", 
-                  marginBottom: "24px",
-                  background: 'linear-gradient(135deg, #ffffff 0%, #FF623B 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}>+ Freelancer Team With One Platform.</h3>
-                
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px", marginBottom: "32px" }}>
-                  {[
-                    { icon: "Video Editor", cost: "$3,000+" },
-                    { icon: "SEO Expert", cost: "" },
-                    { icon: "Content Writer", cost: "" },
-                    { icon: "Outreach Specialist", cost: "" },
-                    { icon: "Funnel Builder", cost: "" },
-                    { icon: "Social Media Manager", cost: "" }
-                  ].map((person, index) => (
-                    <div key={index} style={{ 
-                      display: "flex", 
-                      alignItems: "center", 
-                      gap: "12px",
-                      transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(20px)',
-                      opacity: visibleSections.has('comparison') ? 1 : 0,
-                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${1.2 + index * 0.05}s`
-                    }}>
-                      <div style={{ 
-                        width: "40px", 
-                        height: "40px", 
-                        background: "linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)", 
-                        borderRadius: "8px", 
-                        display: "flex", 
-                        alignItems: "center", 
-                        justifyContent: "center",
-                        color: "white",
-                        fontSize: "14px",
-                        fontWeight: "bold",
-                        boxShadow: '0 5px 15px rgba(255, 98, 59, 0.3)'
-                      }}>
-                        {person.icon.split(" ").map(word => word[0]).join("")}
-                      </div>
-                      <div>
-                        <div style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.9)" }}>{person.icon}</div>
-                        {person.cost && <div style={{ fontSize: "12px", color: "#FF623B", fontWeight: "bold" }}>{person.cost}</div>}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                <div style={{ 
-                  display: "grid", 
-                  gridTemplateColumns: "1fr 1fr", 
-                  gap: "40px", 
-                  padding: "32px", 
-                  background: "rgba(255, 255, 255, 0.05)", 
-                  borderRadius: "12px",
-                  border: '1px solid rgba(255, 255, 255, 0.1)'
-                }}>
-                  <div style={{
-                    transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(-20px)',
-                    opacity: visibleSections.has('comparison') ? 1 : 0,
-                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.4s'
-                  }}>
-                    <div style={{ fontSize: "1.2rem", color: "rgba(231, 231, 231, 0.6)", marginBottom: "8px" }}>Total Monthly Cost</div>
-                    <div style={{ 
-                      fontSize: "2rem", 
-                      color: "#FF623B", 
-                      fontWeight: "bold",
-                      textShadow: '0 0 20px rgba(255, 98, 59, 0.5)',
-                      animation: visibleSections.has('comparison') ? 'pulse 2s infinite' : 'none'
-                    }}>$5,500+</div>
-                  </div>
-                  <div style={{
-                    transform: visibleSections.has('comparison') ? 'translateX(0)' : 'translateX(20px)',
-                    opacity: visibleSections.has('comparison') ? 1 : 0,
-                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.4s'
-                  }}>
-                    <div style={{ fontSize: "1.2rem", color: "rgba(231, 231, 231, 0.6)", marginBottom: "8px" }}>GoToStudio Starts At</div>
-                    <div style={{ 
-                      fontSize: "2rem", 
-                      color: "white", 
-                      fontWeight: "bold",
-                      textShadow: '0 0 20px rgba(255, 255, 255, 0.5)'
-                    }}>$147/mo</div>
-                  </div>
-                </div>
-                
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px", marginTop: "24px" }}>
-                  {["Save $5,000+/month", "One login, zero chaos", "Expert team included"].map((benefit, index) => (
-                    <div key={index} style={{ 
-                      display: "flex", 
-                      alignItems: "center", 
-                      gap: "8px",
-                      transform: visibleSections.has('comparison') ? 'translateY(0)' : 'translateY(20px)',
-                      opacity: visibleSections.has('comparison') ? 1 : 0,
-                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${1.6 + index * 0.1}s`
-                    }}>
-                      <div style={{ 
-                        width: "6px", 
-                        height: "6px", 
-                        borderRadius: "50%", 
-                        background: "#FF623B",
-                        boxShadow: '0 0 10px rgba(255, 98, 59, 0.5)'
-                      }}></div>
-                      <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.9)" }}>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">get started</span>
+                  <span className="btn-text-hover text-white">get started</span>
+                </button>
               </div>
             </div>
-          </section>
-
-          {/* Enterprise Stats */}
-          <section className="animate-section" id="enterprise" style={{ 
-            padding: "80px clamp(20px, 5vw, 40px)", 
-            background: "rgb(15, 15, 15)",
-            transform: visibleSections.has('enterprise') ? 'translateY(0)' : 'translateY(50px)',
-            opacity: visibleSections.has('enterprise') ? 1 : 0,
-            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-              <h2 style={{ 
-                fontSize: "clamp(2rem, 4vw, 3rem)", 
-                color: "rgb(231, 231, 231)", 
-                marginBottom: "16px",
-                background: 'linear-gradient(135deg, #ffffff 0%, #FF623B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                transform: visibleSections.has('enterprise') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('enterprise') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
-              }}>
-                Enterprise-Grade Power
-              </h2>
-              <p style={{ 
-                fontSize: "clamp(1.2rem, 2vw, 1.5rem)", 
-                color: "rgba(231, 231, 231, 0.9)", 
-                marginBottom: "60px",
-                transform: visibleSections.has('enterprise') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('enterprise') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-              }}>
-                Growth Tools That Were Earlier Only Available to Big Companies.
-              </p>
-              <p style={{ 
-                fontSize: "clamp(1rem, 1.5vw, 1.2rem)", 
-                color: "rgba(231, 231, 231, 0.8)", 
-                marginBottom: "60px", 
-                maxWidth: "800px", 
-                margin: "0 auto 60px",
-                transform: visibleSections.has('enterprise') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('enterprise') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s'
-              }}>
-                Now finally accessible to creators, coaches, consultants, and small businesses - in one powerful platform.
-              </p>
               
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "40px", marginBottom: "60px" }}>
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "30px" }}>
                 {[
-                  { value: "$50M+", label: "Revenue Generated" },
-                  { value: "10K+", label: "Businesses Powered" },
-                  { value: "500+", label: "Active Creators" },
-                  { value: "99.9%", label: "Uptime Guaranteed" }
-                ].map((stat, index) => (
-                  <div key={index} style={{
-                    transform: visibleSections.has('enterprise') ? 'translateY(0) scale(1)' : 'translateY(50px) scale(0.8)',
-                    opacity: visibleSections.has('enterprise') ? 1 : 0,
-                    transition: `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${0.8 + index * 0.1}s`
-                  }}>
-                    <div style={{ 
-                      fontSize: "clamp(2rem, 3vw, 3rem)", 
-                      color: "#FF623B", 
-                      fontWeight: "bold", 
-                      marginBottom: "8px",
-                      textShadow: '0 0 30px rgba(255, 98, 59, 0.5)',
-                      animation: visibleSections.has('enterprise') ? `float 3s ease-in-out infinite ${index * 0.5}s` : 'none'
-                    }}>{stat.value}</div>
-                    <div style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.8)" }}>{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-              
-              <div style={{
-                background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)",
-                border: "1px solid rgba(255, 98, 59, 0.3)",
-                borderRadius: "16px",
-                padding: "40px",
-                transform: visibleSections.has('enterprise') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                opacity: visibleSections.has('enterprise') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1.2s',
-                boxShadow: '0 20px 40px rgba(255, 98, 59, 0.1)'
-              }}>
-                <blockquote style={{ 
-                  fontSize: "clamp(1.1rem, 2vw, 1.3rem)", 
-                  color: "rgba(231, 231, 231, 0.9)", 
-                  fontStyle: "italic", 
-                  maxWidth: "600px", 
-                  margin: "0 auto",
-                  position: 'relative'
-                }}>
-                  <span style={{ 
-                    position: 'absolute',
-                    top: '-20px',
-                    left: '-20px',
-                    fontSize: '60px',
-                    color: 'rgba(255, 98, 59, 0.2)',
-                    fontFamily: 'serif'
-                  }}>"</span>
-                  "The same tools that power Fortune 500 growth engines - now in your hands, at a fraction of the cost."
-                  <span style={{ 
-                    position: 'absolute',
-                    bottom: '-40px',
-                    right: '-20px',
-                    fontSize: '60px',
-                    color: 'rgba(255, 98, 59, 0.2)',
-                    fontFamily: 'serif'
-                  }}>"</span>
-                </blockquote>
-              </div>
-            </div>
-          </section>
-
-          {/* Target Audience */}
-          <section className="animate-section" id="audience" style={{ 
-            padding: "80px clamp(20px, 5vw, 40px)", 
-            background: "rgb(10, 10, 10)",
-            transform: visibleSections.has('audience') ? 'translateY(0)' : 'translateY(50px)',
-            opacity: visibleSections.has('audience') ? 1 : 0,
-            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
-          }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-              <h2 style={{ 
-                fontSize: "clamp(2rem, 4vw, 3rem)", 
-                color: "rgb(231, 231, 231)", 
-                marginBottom: "60px",
-                background: 'linear-gradient(135deg, #ffffff 0%, #FF623B 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                transform: visibleSections.has('audience') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('audience') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
-              }}>
-                The Growth Ecosystem
-              </h2>
-              <p style={{ 
-                fontSize: "clamp(1.2rem, 2vw, 1.5rem)", 
-                color: "rgba(231, 231, 231, 0.9)", 
-                marginBottom: "60px",
-                transform: visibleSections.has('audience') ? 'translateY(0)' : 'translateY(30px)',
-                opacity: visibleSections.has('audience') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-              }}>
-                Built for:
-              </p>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px", marginBottom: "60px" }}>
-                {[
-                  "All Service Businesses", "Creators", "Coaches", "Consultants", 
-                  "Agencies", "SaaS Founders", "Course Creators", "E-commerce"
-                ].map((audience, index) => (
-                  <div key={index} className="feature-card" style={{ 
-                    background: "rgba(255, 255, 255, 0.03)", 
-                    border: "1px solid rgba(255, 255, 255, 0.07)", 
-                    padding: "24px", 
-                    borderRadius: "12px",
-                    transform: visibleSections.has('audience') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
-                    opacity: visibleSections.has('audience') ? 1 : 0,
-                    transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.05}s`,
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
+                  {
+                    title: "Client Management",
+                    description: "Handle multiple clients seamlessly with dedicated workspaces",
+                    icon: "people"
+                  },
+                  {
+                    title: "White-Label Solutions", 
+                    description: "Brand our platform as your own for client delivery",
+                    icon: "brand"
+                  },
+                  {
+                    title: "Revenue Sharing",
+                    description: "Earn commissions on software and service referrals",
+                    icon: "money"
+                  }
+                ].map((feature, index) => (
+                  <div 
+                    key={index}
+                    className="feature-card"
+                    style={{ 
+                      background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)", 
+                      border: "1px solid rgba(255, 98, 59, 0.3)", 
+                      borderRadius: "16px", 
+                      padding: "32px",
+                      position: "relative",
+                      overflow: "hidden",
+                      transform: visibleSections.has('freelancer-team') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                      opacity: visibleSections.has('freelancer-team') ? 1 : 0,
+                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.1}s`
+                    }}
+                  >
                     <div style={{
                       position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      height: '2px',
-                      background: 'linear-gradient(90deg, transparent, #FF623B, transparent)',
-                      transform: visibleSections.has('audience') ? 'translateX(0)' : 'translateX(-100%)',
-                      transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s'
+                      top: '-50%',
+                      right: '-50%',
+                      width: '200%',
+                      height: '200%',
+                      background: 'radial-gradient(circle, rgba(255, 98, 59, 0.1) 0%, transparent 70%)',
+                      animation: visibleSections.has('freelancer-team') ? `float 6s ease-in-out infinite ${index * 2}s` : 'none'
                     }}></div>
-                    <span style={{ fontSize: "16px", color: "rgba(231, 231, 231, 0.9)" }}>{audience}</span>
+                    <div style={{ 
+                      width: "60px", 
+                      height: "60px", 
+                      borderRadius: "12px", 
+                      background: "rgba(255, 98, 59, 0.2)", 
+                      display: "flex", 
+                      alignItems: "center", 
+                      justifyContent: "center", 
+                      marginBottom: "20px",
+                      fontSize: "24px",
+                      color: "#FF623B"
+                    }}>
+                      {feature.icon === "people" && "team"}
+                      {feature.icon === "brand" && "brand"}
+                      {feature.icon === "money" && "payments"}
+                    </div>
+                    <h3 style={{ fontSize: "1.3rem", color: "rgb(231, 231, 231)", marginBottom: "12px" }}>{feature.title}</h3>
+                    <p style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.7)", lineHeight: "1.6" }}>{feature.description}</p>
                   </div>
                 ))}
               </div>
-              
+            </div>
+          </section>
+
+          {/* Enterprise Stats Section */}
+          <section className="animate-section" id="enterprise-stats" style={{ 
+            padding: "80px 0", 
+            background: "rgb(15, 15, 15)",
+            transform: visibleSections.has('enterprise-stats') ? 'translateY(0)' : 'translateY(50px)',
+            opacity: visibleSections.has('enterprise-stats') ? 1 : 0,
+            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    SCALE
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Built for Scale
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Enterprise-grade features for growing businesses
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">view plans</span>
+                  <span className="btn-text-hover text-white">view plans</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "40px" }}>
+                {[
+                  { number: "99.9%", label: "Uptime SLA", description: "Reliable infrastructure" },
+                  { number: "10M+", label: "API Calls", description: "Per month capacity" },
+                  { number: "24/7", label: "Support", description: "Dedicated assistance" },
+                  { number: "SOC 2", label: "Compliant", description: "Security certified" }
+                ].map((stat, index) => (
+                  <div 
+                    key={index}
+                    className="feature-card"
+                    style={{ 
+                      background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)", 
+                      border: "1px solid rgba(255, 98, 59, 0.3)", 
+                      borderRadius: "16px", 
+                      padding: "32px",
+                      position: "relative",
+                      overflow: "hidden",
+                      textAlign: "center",
+                      transform: visibleSections.has('enterprise-stats') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
+                      opacity: visibleSections.has('enterprise-stats') ? 1 : 0,
+                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.6 + index * 0.1}s`
+                    }}
+                  >
+                    <div style={{
+                      position: 'absolute',
+                      top: '-50%',
+                      right: '-50%',
+                      width: '200%',
+                      height: '200%',
+                      background: 'radial-gradient(circle, rgba(255, 98, 59, 0.1) 0%, transparent 70%)',
+                      animation: visibleSections.has('enterprise-stats') ? `float 6s ease-in-out infinite ${index * 1.5}s` : 'none'
+                    }}></div>
+                    <div style={{ 
+                      fontSize: "3rem", 
+                      fontWeight: "bold", 
+                      color: "#FF623B", 
+                      marginBottom: "12px",
+                      background: 'linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text'
+                    }}>
+                      {stat.number}
+                    </div>
+                    <h3 style={{ fontSize: "1.2rem", color: "rgb(231, 231, 231)", marginBottom: "8px" }}>{stat.label}</h3>
+                    <p style={{ fontSize: "13px", color: "rgba(231, 231, 231, 0.6)" }}>{stat.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Target Audience Section */}
+          <section className="animate-section" id="target-audience" style={{ 
+            padding: "80px 0", 
+            background: "rgb(10, 10, 10)",
+            transform: visibleSections.has('target-audience') ? 'translateY(0)' : 'translateY(50px)',
+            opacity: visibleSections.has('target-audience') ? 1 : 0,
+            transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)'
+          }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    AUDIENCE
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Who We Help
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Designed for businesses that want to grow smarter
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">Book a Call</span>
+                  <span className="btn-text-hover text-white">Book a Call</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               <div style={{ 
-                background: "linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)", 
-                padding: "40px", 
-                borderRadius: "16px", 
-                textAlign: "center",
-                transform: visibleSections.has('audience') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
-                opacity: visibleSections.has('audience') ? 1 : 0,
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 1s',
-                boxShadow: '0 20px 40px rgba(255, 98, 59, 0.3)',
+                background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%)", 
+                border: "1px solid rgba(255, 98, 59, 0.3)", 
+                borderRadius: "20px", 
+                padding: "60px",
+                transform: visibleSections.has('target-audience') ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.95)',
+                opacity: visibleSections.has('target-audience') ? 1 : 0,
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s',
+                boxShadow: '0 20px 40px rgba(255, 98, 59, 0.1)',
                 position: 'relative',
                 overflow: 'hidden'
               }}>
@@ -795,44 +761,49 @@ export default function Features() {
                   left: '-50%',
                   width: '200%',
                   height: '200%',
-                  background: 'radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)',
-                  animation: visibleSections.has('audience') ? 'float 6s ease-in-out infinite' : 'none'
+                  background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)',
+                  animation: visibleSections.has('target-audience') ? 'float 6s ease-in-out infinite' : 'none'
                 }}></div>
-                <h3 style={{ 
-                  fontSize: "clamp(1.5rem, 3vw, 2rem)", 
-                  color: "white", 
-                  marginBottom: "16px",
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.5)',
-                  transform: visibleSections.has('audience') ? 'translateY(0)' : 'translateY(20px)',
-                  opacity: visibleSections.has('audience') ? 1 : 0,
-                  transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.2s'
-                }}>
-                  Ready to Replace Your Entire Stack?
-                </h3>
-                <p style={{ 
-                  fontSize: "16px", 
-                  color: "rgba(255, 255, 255, 0.9)", 
-                  marginBottom: "24px",
-                  transform: visibleSections.has('audience') ? 'translateY(0)' : 'translateY(20px)',
-                  opacity: visibleSections.has('audience') ? 1 : 0,
-                  transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.4s'
-                }}>
-                  Book a Discovery Call
+                
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "30px" }}>
+                  {[
+                    "Coaches & Consultants",
+                    "Creators & Educators", 
+                    "Wellness Professionals",
+                    "Service-Based Businesses"
+                  ].map((audience, index) => (
+                    <div key={index} style={{ 
+                      background: "rgba(255, 255, 255, 0.03)", 
+                      border: "1px solid rgba(255, 255, 255, 0.08)", 
+                      borderRadius: "12px", 
+                      padding: "24px",
+                      transform: visibleSections.has('target-audience') ? 'translateY(0)' : 'translateY(20px)',
+                      opacity: visibleSections.has('target-audience') ? 1 : 0,
+                      transition: `all 0.5s cubic-bezier(0.4, 0, 0.2, 1) ${0.8 + index * 0.1}s`
+                    }}>
+                      <span style={{ fontSize: "14px", color: "rgba(231, 231, 231, 0.9)" }}>{audience}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <p style={{ fontSize: "16px", color: "rgba(231, 231, 231, 0.8)", marginBottom: "32px" }}>
+                  Let's build systems that support your growth
                 </p>
+                
                 <button 
-                  className="group relative overflow-hidden flex items-center justify-center h-[44px] bg-white hover:bg-transparent transition-all duration-300 cursor-pointer border border-white rounded-full px-8 transform hover:scale-105" 
+                  className="group relative overflow-hidden flex items-center justify-center h-[44px] bg-[#FF623B] hover:bg-white transition-all duration-300 cursor-pointer border border-[#FF623B] hover:border-white rounded-full px-8 transform hover:scale-105" 
                   style={{ 
                     width: "fit-content", 
                     margin: "0 auto",
-                    transform: visibleSections.has('audience') ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.9)',
-                    opacity: visibleSections.has('audience') ? 1 : 0,
-                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.6s',
-                    boxShadow: '0 10px 30px rgba(255, 255, 255, 0.3)'
+                    transform: visibleSections.has('target-audience') ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.9)',
+                    opacity: visibleSections.has('target-audience') ? 1 : 0,
+                    transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s',
+                    boxShadow: '0 10px 30px rgba(255, 98, 59, 0.3)'
                   }}
                 >
                   <span className="invisible text-[11px] font-semibold uppercase tracking-wider">Book a Call</span>
-                  <span className="absolute inset-0 flex items-center justify-center text-black text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 ease-in-out group-hover:-translate-y-full">Book a Call</span>
-                  <span className="absolute inset-0 flex items-center justify-center text-white text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 ease-in-out translate-y-full group-hover:translate-y-0">Book a Call</span>
+                  <span className="absolute inset-0 flex items-center justify-center text-white text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 ease-in-out group-hover:-translate-y-full">Book a Call</span>
+                  <span className="absolute inset-0 flex items-center justify-center text-black text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 ease-in-out translate-y-full group-hover:translate-y-0">Book a Call</span>
                 </button>
               </div>
             </div>

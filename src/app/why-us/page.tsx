@@ -105,11 +105,31 @@ export default function WhyUs() {
           </section>
 
           {/* Built For Section */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(15, 15, 15)" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", marginBottom: "24px" }}>
-                Built for:
-              </h2>
+          <section style={{ padding: "80px 0", background: "rgb(15, 15, 15)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    TARGET AUDIENCE
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Built for:
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Wellness professionals ready to scale their impact
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">learn more</span>
+                  <span className="btn-text-hover text-white">learn more</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px", marginBottom: "40px" }}>
                 {[
                   "Yoga Studios", "Coaches", "Healers", "Retreat Leaders", "Holistic Clinics"
@@ -123,14 +143,31 @@ export default function WhyUs() {
           </section>
 
           {/* Why Soulful Marketing */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(10, 10, 10)" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", textAlign: "center", marginBottom: "40px" }}>
-                Why Soulful Marketing Works
-              </h2>
-              <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)", color: "rgba(231, 231, 231, 0.8)", textAlign: "center", lineHeight: "1.6", maxWidth: "800px", margin: "0 auto 60px" }}>
-                Wellness marketing requires integrity and trust - not gimmicks. Your audience can feel when something is authentic. We build marketing systems that honor your values while delivering measurable results.
-              </p>
+          <section style={{ padding: "80px 0", background: "rgb(10, 10, 10)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    PHILOSOPHY
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Why Soulful Marketing Works
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Wellness marketing requires integrity and trust - not gimmicks. Your audience can feel when something is authentic.
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">learn more</span>
+                  <span className="btn-text-hover text-white">learn more</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "32px" }}>
                 {[

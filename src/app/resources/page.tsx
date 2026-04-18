@@ -26,14 +26,31 @@ export default function Resources() {
           </section>
 
           {/* Growth Ecosystem Section */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(15, 15, 15)" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", marginBottom: "24px" }}>
-                Your Growth Ecosystem Awaits
-              </h2>
-              <p style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)", color: "rgba(231, 231, 231, 0.8)", lineHeight: "1.6", marginBottom: "40px" }}>
-                Your All-in-One<br />Business, Content, & AI<br />Growth Ecosystem Is Here.
-              </p>
+          <section style={{ padding: "80px 0", background: "rgb(15, 15, 15)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    ECOSYSTEM
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Your Growth Ecosystem Awaits
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Your All-in-One<br />Business, Content, & AI<br />Growth Ecosystem Is Here.
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">get started</span>
+                  <span className="btn-text-hover text-white">get started</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               
               <div style={{ background: "linear-gradient(135deg, #FF623B 0%, #FF8C42 100%)", padding: "60px", borderRadius: "12px", textAlign: "center" }}>
                 <h3 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "white", marginBottom: "16px" }}>
@@ -61,11 +78,31 @@ export default function Resources() {
           </section>
 
           {/* Free Tools Section */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(10, 10, 10)" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", textAlign: "center", marginBottom: "60px" }}>
-                Get a Free AI Marketing Report, Instantly!
-              </h2>
+          <section style={{ padding: "80px 0", background: "rgb(10, 10, 10)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    FREE TOOLS
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Get a Free AI Marketing Report, Instantly!
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Free AI-powered marketing insights in seconds
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">get report</span>
+                  <span className="btn-text-hover text-white">get report</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: "32px" }}>
                 {/* AI Marketing Report */}
@@ -124,11 +161,31 @@ export default function Resources() {
           </section>
 
           {/* Additional Resources */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(15, 15, 15)" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", textAlign: "center", marginBottom: "60px" }}>
-                More Free Resources
-              </h2>
+          <section style={{ padding: "80px 0", background: "rgb(15, 15, 15)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    RESOURCES
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    More Free Resources
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Guides, templates, and tools to grow your business
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">explore</span>
+                  <span className="btn-text-hover text-white">explore</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
                 {[
@@ -179,8 +236,31 @@ export default function Resources() {
           </section>
 
           {/* CTA Section */}
-          <section style={{ padding: "80px clamp(20px, 5vw, 40px)", background: "rgb(10, 10, 10)" }}>
-            <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+          <section style={{ padding: "80px 0", background: "rgb(10, 10, 10)" }}>
+            <div
+              className="relative flex w-full justify-center px-4 pt-14 pb-4 pointer-events-none sm:px-6 lg:px-10 mb-6 lg:mb-12 xl:mb-0 2xl:mb-[-6vh]"
+              style={{ zIndex: 60 }}
+            >
+              <div className="w-full max-w-[1200px] flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pointer-events-auto">
+                <div className="flex flex-col gap-3">
+                  <span className="text-white uppercase tracking-[0.03em] font-medium opacity-40" style={{ fontSize: 10, lineHeight: "1.4em" }}>
+                    GET STARTED
+                  </span>
+                  <h2 className="text-white font-normal" style={{ fontSize: 27, lineHeight: "1.2em", letterSpacing: "-0.03em" }}>
+                    Ready to Transform Your Business?
+                  </h2>
+                  <p className="text-white font-normal" style={{ fontSize: 16, lineHeight: "1.4em", letterSpacing: "-0.01em", opacity: 0.7 }}>
+                    Start your journey with GoToStudio today
+                  </p>
+                </div>
+                <button className="btn-slide h-[30px] w-[138px] bg-white hover:bg-[#FF623B] backdrop-blur-[6px]">
+                  <span className="btn-text-default text-black">Book a Call</span>
+                  <span className="btn-text-hover text-white">Book a Call</span>
+                </button>
+              </div>
+            </div>
+            
+            <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 clamp(20px, 5vw, 40px)" }}>
               <div style={{ background: "linear-gradient(135deg, rgba(255, 98, 59, 0.1) 0%, rgba(255, 140, 66, 0.1) 100%)", border: "1px solid rgba(255, 98, 59, 0.3)", borderRadius: "12px", padding: "60px" }}>
                 <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "rgb(231, 231, 231)", marginBottom: "24px" }}>
                   Ready to Transform Your Business?
