@@ -5,8 +5,8 @@ export const siteConfig = {
   name: "GoTo Studio AI",
   tagline: "All-in-one AI-powered growth platform for modern businesses",
   logo: {
-    white: "/w-logo.svg",
-    dark: "/b-logo.svg",
+    white: "/favicon.png",
+    dark: "/favicon.png",
     alt: "GoTo Studio AI logo",
   },
   email: "hello@gotostudio.ai",
@@ -17,11 +17,11 @@ export const siteConfig = {
   },
   bookingUrl: "https://crm.gotostudio.ai/widget/booking/jbJmfsmfw2WqVHNvTLHO",
   nav: [
-    { label: "Features", href: "#platforms" },
-    { label: "Pricing", href: "#plans" },
-    { label: "Resources", href: "#clients" },
-    { label: "About", href: "#about" },
-    { label: "Why Us", href: "#testimonials" },
+    { label: "Features", href: "/features" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Resources", href: "/resources" },
+    { label: "About", href: "/about" },
+    { label: "Why Us", href: "/why-us" },
   ],
 };
 
@@ -157,39 +157,39 @@ export const testimonialsContent = [
 
 export const ethosContent = {
   sectionLabel: "Our Ethos",
-  sectionTitle: "Vision matters. Velocity wins.",
+  sectionTitle: "Designed for growth. Built to scale.",
   cards: [
     {
-      title: "USER\nRESEARCH",
+      title: "CAPTURE\nLEADS",
       description:
-        "WE DIG DEEP INTO USER BEHAVIORS, NEEDS, AND PAIN POINTS. EVERY DECISION IS ROOTED IN REAL EVIDENCE, NOT ASSUMPTIONS.",
+        "LANDING PAGES, FUNNELS, AND FORMS DESIGNED TO ATTRACT AND CAPTURE HIGH-INTENT LEADS - AUTOMATICALLY AND AT SCALE.",
       bg: "#2E2E2E",
       textColor: "#ffffff",
       numColor: "#ffffff",
       icon: "/icons/research.svg",
     },
     {
-      title: "PROTOTYPING\nAND USER\nTESTING",
+      title: "AUTOMATE\nOUTREACH",
       description:
-        "RAPID PROTOTYPES VALIDATED BY REAL USERS. WE ITERATE FAST, FAIL CHEAP, AND SHIP ONLY WHAT WORKS.",
+        "EMAIL AND SMS AUTOMATIONS THAT NURTURE, FOLLOW UP, AND ENGAGE LEADS - CONSISTENTLY, WITHOUT MANUAL EFFORT.",
       bg: "#4E8B8B",
       textColor: "#1A2E2E",
       numColor: "#000000",
       icon: "/icons/prototype.svg",
     },
     {
-      title: "USER-CENTERED\nDESIGN",
+      title: "CONVERT\nCLIENTS",
       description:
-        "EVERY PIXEL SERVES A PURPOSE. WE DESIGN FOR THE HUMAN FIRST — INTUITIVE, CLEAR, AND BUILT TO BUILD TRUST.",
+        "SMART CRM PIPELINES AND STRATEGIC FOLLOW-UPS THAT TURN INTEREST INTO ACTION - AND LEADS INTO PAYING CLIENTS.",
       bg: "#E35529",
       textColor: "#1A0800",
       numColor: "#000000",
       icon: "/icons/design.svg",
     },
     {
-      title: "RESPONSIBLE\nAND\nACCESSIBLE",
+      title: "SCALE\nGROWTH",
       description:
-        "INCLUSION IS NOT AN AFTERTHOUGHT. WE BUILD FOR EVERYONE — WCAG-COMPLIANT, PERFORMANT, AND ETHICALLY SOUND.",
+        "AI-POWERED TOOLS, ANALYTICS, AND CONTENT SYSTEMS THAT CONTINUOUSLY OPTIMIZE PERFORMANCE - DRIVING COMPOUND GROWTH OVER TIME.",
       bg: "#DDDBD4",
       textColor: "#1A1A1A",
       numColor: "#000000",
@@ -198,16 +198,6 @@ export const ethosContent = {
   ],
 };
 
-export const techStackContent = {
-  title:
-    "Built with the high-end technologies we use to ship fast, scalable, and reliable digital products.",
-  icons: [
-    "nextdotjs", "react", "typescript", "javascript", "python", "kubernetes", "flutter",
-    "nodedotjs", "tailwindcss", "postgresql", "docker", "mongodb", "vercel", "figma",
-    "framer", "graphql", "postman", "firebase", "redis", "go", "rust", "ansible",
-    "googlecloud", "digitalocean", "terraform", "grafana", "datadog", "langchain",
-  ],
-};
 
 export const footerContent = {
   heading: "Ready to scale your business?\nLet's make it happen.",

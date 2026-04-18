@@ -29,7 +29,7 @@ export default function Header() {
       <div
         className="md:hidden fixed inset-0 pointer-events-none transition-all duration-300"
         style={{
-          zIndex: 99,
+          zIndex: 98,
           backdropFilter: mobileOpen ? "blur(6px)" : "blur(0px)",
           WebkitBackdropFilter: mobileOpen ? "blur(6px)" : "blur(0px)",
           background: mobileOpen ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
@@ -43,7 +43,7 @@ export default function Header() {
       <header
         className="fixed top-0 left-0 right-0 flex flex-col justify-center w-full px-4 sm:px-6 md:px-10"
         style={{
-          zIndex: 100,
+          zIndex: 150,
           background: "#0A0A0A",
           boxShadow: "inset 0 -1px 0 rgba(255,255,255,0.07)",
           transform: scrolled ? "translateY(-100%)" : "translateY(0)",
@@ -53,7 +53,7 @@ export default function Header() {
         }}
       >
         <div className="flex items-center justify-between w-full mx-auto py-2" style={{ maxWidth: 1200 }}>
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0 hover:opacity-80 transition-opacity cursor-pointer" style={{ position: "relative", zIndex: 101 }}>
             <Image src={siteConfig.logo.white} alt={siteConfig.logo.alt} width={28} height={24} style={{ width: "auto", height: 24 }} />
           </Link>
 
@@ -112,7 +112,7 @@ export default function Header() {
 
       {/* ── Floating Pill Nav ────────────────────────── */}
       <div className={`pill-nav hidden md:flex items-center gap-6 ${scrolled ? "visible-pill" : "hidden-pill"}`}>
-        <Link href="/" className="flex items-center shrink-0">
+        <Link href="/" className="flex items-center shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
           <Image src={siteConfig.logo.white} alt={siteConfig.logo.alt} width={26} height={22} style={{ width: "auto", height: 22 }} />
         </Link>
         <nav className="flex items-center gap-6">

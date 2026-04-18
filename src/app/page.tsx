@@ -5,7 +5,6 @@ import FeaturedWork from "@/components/FeaturedWork";
 import ScrollText from "@/components/ScrollText";
 import Domains from "@/components/Domains";
 import Ethos from "@/components/Ethos";
-import TechGrid from "@/components/TechGrid";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
           <ScrollText />
           <Domains />
           <Ethos />
-          <TechGrid />
           <Footer />
         </main>
       </div>
